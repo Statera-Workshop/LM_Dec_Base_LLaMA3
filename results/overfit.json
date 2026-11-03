@@ -1,0 +1,24 @@
+{
+ "model": "llama3",
+ "repo": "LM_2024_llama3-pytorch",
+ "target_repo": "LM_Dec_Base_LLaMA3",
+ "category": "Base",
+ "upstream": "vendored from RichardMinsooGo/LM_2024_llama3-pytorch (see LICENSE in vendor folder if present)",
+ "unified": [
+  "2 kv groups, rope base 500k, hidden 1408; hard-coded bfloat16 casts removed from the vendored file"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "overfit",
+ "started": "2026-11-02 11:45:09",
+ "smoke": false,
+ "first_ce": 5.765381336212158,
+ "last_ce": 0.0013897133758291602,
+ "passed": true,
+ "pass_loss": 0.5,
+ "steps": 400,
+ "seconds": 13.6,
+ "lr": 0.001,
+ "note": "overfit uses Adam 1e-3 on 4 x 256 bytes; only an implementation check",
+ "bf16": true
+}

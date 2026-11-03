@@ -1,0 +1,40 @@
+{
+ "model": "llama3",
+ "repo": "LM_2024_llama3-pytorch",
+ "target_repo": "LM_Dec_Base_LLaMA3",
+ "category": "Base",
+ "upstream": "vendored from RichardMinsooGo/LM_2024_llama3-pytorch (see LICENSE in vendor folder if present)",
+ "unified": [
+  "2 kv groups, rope base 500k, hidden 1408; hard-coded bfloat16 casts removed from the vendored file"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "check",
+ "started": "2026-11-02 11:29:08",
+ "smoke": false,
+ "params": 17177088,
+ "causality": {
+  "causal": true,
+  "uses_input": true,
+  "worst_leak": 0.0,
+  "min_effect": 2.257392406463623,
+  "logit_scale": 2.464673565460205,
+  "length": 256,
+  "positions": [
+   17,
+   63,
+   100,
+   130,
+   200
+  ]
+ },
+ "data_checks": [
+  "enwik8 train bytes  90,000,000 expected  90,000,000 OK",
+  "enwik8 valid bytes   5,000,000 expected   5,000,000 OK",
+  "enwik8 test  bytes   5,000,000 expected   5,000,000 OK",
+  "enwik8 distinct byte values in first 10M train bytes: 200 (vocab 256)",
+  "recall L=512 random gap: 16 answers/sample, keys/values/distractors disjoint OK",
+  "recall L=512 max gap: 16 answers/sample, keys/values/distractors disjoint OK"
+ ],
+ "seconds": 0.6
+}

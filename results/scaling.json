@@ -1,0 +1,65 @@
+{
+ "model": "llama3",
+ "repo": "LM_2024_llama3-pytorch",
+ "target_repo": "LM_Dec_Base_LLaMA3",
+ "category": "Base",
+ "upstream": "vendored from RichardMinsooGo/LM_2024_llama3-pytorch (see LICENSE in vendor folder if present)",
+ "unified": [
+  "2 kv groups, rope base 500k, hidden 1408; hard-coded bfloat16 casts removed from the vendored file"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "scaling",
+ "started": "2026-11-02 11:37:09",
+ "smoke": false,
+ "rows": [
+  {
+   "len": 512,
+   "train": {
+    "peak_mb": 232.8,
+    "ms": 26.8,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 57.1,
+    "ms": 9.0,
+    "dtype": "bf16"
+   }
+  },
+  {
+   "len": 1024,
+   "train": {
+    "peak_mb": 581.0,
+    "ms": 25.2,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 138.9,
+    "ms": 9.0,
+    "dtype": "bf16"
+   }
+  },
+  {
+   "len": 2048,
+   "train": {
+    "peak_mb": 1869.2,
+    "ms": 58.4,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 436.1,
+    "ms": 21.5,
+    "dtype": "bf16"
+   }
+  },
+  {
+   "len": 4096,
+   "note": "not supported (model built for <= 2048)"
+  },
+  {
+   "len": 8192,
+   "note": "not supported (model built for <= 2048)"
+  }
+ ],
+ "seconds": 1.5
+}
